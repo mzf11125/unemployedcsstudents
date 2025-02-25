@@ -44,7 +44,7 @@ export default function Home() {
         </div>
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 bg-blue-800 flex items-center justify-center p-8">
           <div className="relative h-64 w-full sm:h-72 md:h-96 lg:h-full">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/30 to-blue-900 rounded-xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/30 to-blue-900 rounded-xl" />
             <div className="relative h-full w-full flex items-center justify-center">
               <div className="text-6xl font-bold text-white opacity-30">
                 &lt;/&gt;
