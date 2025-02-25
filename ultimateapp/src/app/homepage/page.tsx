@@ -1,18 +1,19 @@
+// src/app/page.tsx
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="bg-blue-900">
+    <div className="bg-dark-800">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <div className="relative z-10 pb-8 bg-blue-900 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 min-h-[70vh] flex items-center">
+          <div className="relative z-10 pb-8 bg-dark-800 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 min-h-[70vh] flex items-center">
             <div className="px-4 sm:px-6 lg:px-8">
               <div className="text-center lg:text-left">
                 <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
                   <span className="block">Launch your CS career</span>
-                  <span className="block text-blue-400">
+                  <span className="block text-primary-500">
                     even without a job
                   </span>
                 </h1>
@@ -24,7 +25,7 @@ export default function Home() {
                   <div className="rounded-md shadow">
                     <Link
                       href="/auth/signup"
-                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10"
+                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 md:py-4 md:text-lg md:px-10"
                     >
                       Get started
                     </Link>
@@ -32,7 +33,7 @@ export default function Home() {
                   <div className="mt-3 sm:mt-0 sm:ml-3">
                     <Link
                       href="/mentors"
-                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-blue-800 hover:bg-blue-700 md:py-4 md:text-lg md:px-10"
+                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary-600 bg-dark-700 hover:bg-dark-600 md:py-4 md:text-lg md:px-10"
                     >
                       Browse mentors
                     </Link>
@@ -42,9 +43,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 bg-blue-800 flex items-center justify-center p-8">
+        <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 bg-dark-900 flex items-center justify-center p-8">
           <div className="relative h-64 w-full sm:h-72 md:h-96 lg:h-full">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/30 to-blue-900 rounded-xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-primary-600/30 to-dark-900 rounded-xl"></div>
             <div className="relative h-full w-full flex items-center justify-center">
               <div className="text-6xl font-bold text-white opacity-30">
                 &lt;/&gt;
@@ -55,7 +56,7 @@ export default function Home() {
       </div>
 
       {/* Features Section */}
-      <div className="py-12 bg-blue-900">
+      <div className="py-12 bg-dark-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
@@ -69,8 +70,8 @@ export default function Home() {
           <div className="mt-10">
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {/* Feature 1: Mentorship */}
-              <div className="bg-blue-800 rounded-xl p-6 border border-blue-700 hover:border-blue-500 transition-all hover:shadow-lg hover:shadow-blue-900/20">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600 text-white mb-4">
+              <div className="bg-dark-700 rounded-xl p-6 border border-dark-600 hover:border-primary-500 transition-all hover:shadow-lg hover:shadow-primary-900/20">
+                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary-600 text-white mb-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -96,7 +97,7 @@ export default function Home() {
                 <div className="mt-4">
                   <Link
                     href="/mentors"
-                    className="text-blue-400 hover:text-blue-300 flex items-center"
+                    className="text-primary-400 hover:text-primary-300 flex items-center"
                   >
                     Find a mentor
                     <svg
@@ -118,8 +119,8 @@ export default function Home() {
               </div>
 
               {/* Feature 2: Resume Builder */}
-              <div className="bg-blue-800 rounded-xl p-6 border border-blue-700 hover:border-blue-500 transition-all hover:shadow-lg hover:shadow-blue-900/20">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600 text-white mb-4">
+              <div className="bg-dark-700 rounded-xl p-6 border border-dark-600 hover:border-primary-500 transition-all hover:shadow-lg hover:shadow-primary-900/20">
+                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary-600 text-white mb-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -145,7 +146,7 @@ export default function Home() {
                 <div className="mt-4">
                   <Link
                     href="/resume-maker"
-                    className="text-blue-400 hover:text-blue-300 flex items-center"
+                    className="text-primary-400 hover:text-primary-300 flex items-center"
                   >
                     Build your resume
                     <svg
@@ -167,8 +168,8 @@ export default function Home() {
               </div>
 
               {/* Feature 3: Job Board */}
-              <div className="bg-blue-800 rounded-xl p-6 border border-blue-700 hover:border-blue-500 transition-all hover:shadow-lg hover:shadow-blue-900/20">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600 text-white mb-4">
+              <div className="bg-dark-700 rounded-xl p-6 border border-dark-600 hover:border-primary-500 transition-all hover:shadow-lg hover:shadow-primary-900/20">
+                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary-600 text-white mb-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -194,7 +195,7 @@ export default function Home() {
                 <div className="mt-4">
                   <Link
                     href="/jobs"
-                    className="text-blue-400 hover:text-blue-300 flex items-center"
+                    className="text-primary-400 hover:text-primary-300 flex items-center"
                   >
                     Browse jobs
                     <svg
