@@ -1,6 +1,6 @@
 // src/app/mentors/[mentorId]/page.tsx
 import Link from 'next/link'
-import Image from 'next/image'
+// import Image from 'next/image'
 
 // This would usually come from an API based on the mentorId
 const getMentorData = (id: string) => {
@@ -152,4 +152,70 @@ export default function MentorProfilePage({ params }: { params: { mentorId: stri
                 <h2 className="text-xl font-semibold text-white mb-4">Experience</h2>
                 <div className="space-y-4">
                   {mentor.experience.map((exp, index) => (
-                    <div key={index}></div>
+                    <div key={index} className="border-l-2 border-primary-500 pl-4">
+                      <h3 className="text-white font-medium">{exp.role}</h3>
+                      <p className="text-primary-400">{exp.company}</p>
+                      <p className="text-gray-400 text-sm">{exp.duration}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="bg-dark-700 rounded-xl border border-dark-600 p-6">
+                <h2 className="text-xl font-semibold text-white mb-4">Education</h2>
+                <div className="space-y-4">
+                  {mentor.education.map((edu, index) => (
+                    <div key={index} className="border-l-2 border-primary-500 pl-4">
+                      <h3 className="text-white font-medium">{edu.degree}</h3>
+                      <p className="text-primary-400">{edu.institution}</p>
+                      <p className="text-gray-400 text-sm">{edu.year}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+            {/* Reviews */}
+            <div className="bg-dark-700 rounded-xl border border-dark-600 p-6 mb-8">
+              <h2 className="text-xl font-semibold text-white mb-4">Reviews</h2>
+              <div className="space-y-6">
+                {mentor.reviews.map((review) => (
+                  <div key={review.id} className="border-b border-dark-600 last:border-0 pb-6 last:pb-0">
+                    <div className="flex justify-between">
+                      <h3 className="text-white font-medium">{review.name}</h3>
+                      <span className="text-gray-400 text-sm">{review.date}</span>
+                    </div>
+                    <div className="flex items-center mt-1">
+                      {[...Array(5)].map((_, i) => (
+                        <span key={i} className={`text-sm ${i < review.rating ? 'text-yellow-400' : 'text-gray-600'}`}>★</span>
+                      ))}
+                    </div>
+                    <p className="mt-2 text-gray-300">{review.comment}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          {/* Sidebar for booking */}
+          <div className="lg:col-span-1">
+            <div className="bg-dark-700 rounded-xl border border-dark-600 p-6 sticky top-6">
+              <h2 className="text-xl font-semibold text-white mb-4">Available Sessions</h2>
+              <div className="space-y-3">
+                {mentor.upcomingSlots.map((slot) => (
+                  <div key={slot.id} className="bg-dark-600 rounded-lg p-4 hover:bg-dark-500 transition-colors cursor-pointer">
+                    <p className="text-white font-medium">{slot.day}, {slot.date}</p>
+                    <p className="text-gray-400 text-sm">{slot.time}</p>
+                  </div>
+                ))}
+              </div>
+              <button className="w-full mt-6 px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-md transition-colors font-medium">
+                View all availability
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}

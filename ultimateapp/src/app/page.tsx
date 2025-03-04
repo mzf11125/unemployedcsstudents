@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 
 export default function Home() {
   return (
@@ -90,7 +90,7 @@ export default function Home() {
                   Connect with Mentors
                 </h3>
                 <p className="mt-2 text-gray-300">
-                  Get guidance from industry professionals who've been in your
+                  Get guidance from industry professionals who&apos;ve been in your
                   shoes. Schedule 1:1 sessions and get practical advice.
                 </p>
                 <div className="mt-4">
