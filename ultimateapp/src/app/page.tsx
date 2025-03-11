@@ -1,223 +1,352 @@
 import Link from "next/link";
-// import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
   return (
-    <div className="bg-blue-900">
-      {/* Hero Section */}
-      <div className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="relative z-10 pb-8 bg-blue-900 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 min-h-[70vh] flex items-center">
-            <div className="px-4 sm:px-6 lg:px-8">
-              <div className="text-center lg:text-left">
-                <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
-                  <span className="block">Launch your CS career</span>
-                  <span className="block text-blue-400">
-                    even without a job
-                  </span>
-                </h1>
-                <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                  Connect with mentors, access resources, build your resume, and
-                  find job opportunities tailored for CS graduates.
-                </p>
-                <div className="mt-8 sm:flex sm:justify-center lg:justify-start">
-                  <div className="rounded-md shadow">
-                    <Link
-                      href="/auth/signup"
-                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10"
-                    >
-                      Get started
-                    </Link>
-                  </div>
-                  <div className="mt-3 sm:mt-0 sm:ml-3">
-                    <Link
-                      href="/mentors"
-                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-blue-800 hover:bg-blue-700 md:py-4 md:text-lg md:px-10"
-                    >
-                      Browse mentors
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <div className="bg-black text-white min-h-screen">
+      {/* Header/Navigation */}
+      <header className="container mx-auto px-4 py-6 flex justify-between items-center border-b border-zinc-800">
+        <div className="flex items-center gap-2">
+          <div className="h-10 w-10 rounded-full bg-blue-600 flex items-center justify-center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 4v16m-8-8h16"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
           </div>
+          <span className="text-sm font-semibold tracking-wide">
+            UnemployedCS
+          </span>
         </div>
-        <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 bg-blue-800 flex items-center justify-center p-8">
-          <div className="relative h-64 w-full sm:h-72 md:h-96 lg:h-full">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/30 to-blue-900 rounded-xl" />
-            <div className="relative h-full w-full flex items-center justify-center">
-              <div className="text-6xl font-bold text-white opacity-30">
-                &lt;/&gt;
-              </div>
-            </div>
-          </div>
+        <nav
+          aria-label="Main navigation"
+          className="hidden md:flex items-center gap-8"
+        >
+          <Link
+            href="/"
+            className="text-sm text-white hover:text-blue-400 transition-colors"
+          >
+            Home
+          </Link>
+          <Link
+            href="/mentors"
+            className="text-sm text-gray-400 hover:text-white transition-colors"
+          >
+            Mentors
+          </Link>
+          <Link
+            href="/resources"
+            className="text-sm text-gray-400 hover:text-white transition-colors"
+          >
+            Resources
+          </Link>
+          <Link
+            href="/jobs"
+            className="text-sm text-gray-400 hover:text-white transition-colors"
+          >
+            Jobs
+          </Link>
+          <Link
+            href="/about"
+            className="text-sm text-gray-400 hover:text-white transition-colors"
+          >
+            About
+          </Link>
+        </nav>
+        <div className="flex items-center gap-4">
+          <Link
+            href="/login"
+            className="text-sm text-gray-300 hover:text-white transition-colors"
+          >
+            Log in
+          </Link>
+          <Button
+            size="sm"
+            className="bg-white text-black hover:bg-gray-200 rounded-full px-4"
+          >
+            Sign up
+          </Button>
         </div>
-      </div>
+      </header>
 
-      {/* Features Section */}
-      <div className="py-12 bg-blue-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-              How we help CS students
-            </h2>
-            <p className="mt-4 max-w-2xl text-xl text-gray-300 mx-auto">
-              Everything you need to kickstart your career in tech
-            </p>
-          </div>
+      <main>
+        {/* Main Hero Section */}
+        <section className="container mx-auto px-4 py-20 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            WELCOME TO
+            <br />
+            <span className="text-5xl md:text-6xl font-extrabold tracking-tight">
+              UnemployedCS
+              <br />
+              Students
+            </span>
+          </h1>
+          <p className="text-gray-400 mb-10 max-w-md mx-auto text-lg">
+            Land the tech job you deserve.
+          </p>
+          <Button className="bg-blue-600 hover:bg-blue-700 px-8 py-6 text-lg font-medium rounded-md transition-transform hover:scale-105">
+            Get Started
+          </Button>
+        </section>
 
-          <div className="mt-10">
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {/* Feature 1: Mentorship */}
-              <div className="bg-blue-800 rounded-xl p-6 border border-blue-700 hover:border-blue-500 transition-all hover:shadow-lg hover:shadow-blue-900/20">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600 text-white mb-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-medium text-white">
-                  Connect with Mentors
-                </h3>
-                <p className="mt-2 text-gray-300">
-                  Get guidance from industry professionals who&apos;ve been in your
-                  shoes. Schedule 1:1 sessions and get practical advice.
-                </p>
-                <div className="mt-4">
-                  <Link
-                    href="/mentors"
-                    className="text-blue-400 hover:text-blue-300 flex items-center"
-                  >
-                    Find a mentor
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 ml-1"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-
-              {/* Feature 2: Resume Builder */}
-              <div className="bg-blue-800 rounded-xl p-6 border border-blue-700 hover:border-blue-500 transition-all hover:shadow-lg hover:shadow-blue-900/20">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600 text-white mb-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-medium text-white">
-                  Resume Builder
-                </h3>
-                <p className="mt-2 text-gray-300">
-                  Create an ATS-optimized resume tailored for tech companies.
-                  Get templates designed for CS roles.
-                </p>
-                <div className="mt-4">
-                  <Link
-                    href="/resume-maker"
-                    className="text-blue-400 hover:text-blue-300 flex items-center"
-                  >
-                    Build your resume
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 ml-1"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-
-              {/* Feature 3: Job Board */}
-              <div className="bg-blue-800 rounded-xl p-6 border border-blue-700 hover:border-blue-500 transition-all hover:shadow-lg hover:shadow-blue-900/20">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600 text-white mb-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-medium text-white">
-                  Job Opportunities
-                </h3>
-                <p className="mt-2 text-gray-300">
-                  Discover entry-level and junior developer roles curated for CS
-                  graduates with limited experience.
-                </p>
-                <div className="mt-4">
-                  <Link
-                    href="/jobs"
-                    className="text-blue-400 hover:text-blue-300 flex items-center"
-                  >
-                    Browse jobs
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 ml-1"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
+        {/* Features Section */}
+        <section className="bg-zinc-900 py-20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-2xl font-bold mb-3 tracking-wide">
+                OUR FEATURES
+              </h2>
+              <p className="text-gray-400 max-w-lg mx-auto">
+                Tools, mentorship, and resources specifically designed to help
+                CS students land their first tech job.
+              </p>
             </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+              {[
+                "Mentorship sessions",
+                "Resume building",
+                "Interview prep",
+                "Job placement",
+              ].map((alt, idx) => (
+                <div key={idx} className="rounded-lg overflow-hidden h-48">
+                  <img
+                    src={`/api/placeholder/300/200?text=${encodeURIComponent(
+                      alt
+                    )}`}
+                    alt={alt}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Mentors Section */}
+            <section className="flex flex-col md:flex-row gap-12 mb-32 items-center">
+              <div className="flex-1 flex justify-center">
+                <div className="relative">
+                  <div className="w-24 h-32 bg-gray-700 rounded-lg absolute -top-4 -left-4 z-0"></div>
+                  <div className="w-24 h-32 bg-gray-600 rounded-lg absolute -top-2 -left-2 z-10"></div>
+                  <div className="w-24 h-32 bg-white/10 backdrop-blur-sm rounded-lg relative z-20 border border-white/20"></div>
+                </div>
+              </div>
+              <div className="flex-1 text-left">
+                <h3 className="text-3xl font-bold mb-4">
+                  Mentors That Make a Difference
+                </h3>
+                <p className="text-gray-400 mb-6 text-lg">
+                  Connect with industry professionals who understand the
+                  challenges of breaking into tech and can provide personalized
+                  guidance for your career journey.
+                </p>
+                <Button className="bg-green-500 hover:bg-green-600 px-6 py-2 text-md transition-colors">
+                  Connect Now
+                </Button>
+              </div>
+            </section>
+
+            {/* Courses Section */}
+            <section className="mb-32">
+              <div className="flex items-center gap-4 mb-4 justify-center">
+                <div className="h-14 w-14 rounded-full bg-blue-600 flex items-center justify-center text-xl font-bold">
+                  C
+                </div>
+                <h3 className="text-3xl font-bold">Expert-Led Courses</h3>
+              </div>
+              <p className="text-gray-400 mb-6 text-lg max-w-2xl mx-auto text-center">
+                Access specialized technical courses designed to fill knowledge
+                gaps and teach the practical skills employers are looking for.
+              </p>
+              <div className="bg-zinc-800 h-48 w-full rounded-lg border border-zinc-700 shadow-lg"></div>
+            </section>
+
+            {/* Resume Builder Section */}
+            <section className="flex flex-col md:flex-row gap-12 mb-32 items-center">
+              <div className="flex-1">
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="bg-zinc-800 h-32 rounded-md border border-zinc-700 shadow-md"></div>
+                  <div className="bg-zinc-800 h-32 rounded-md border border-zinc-700 shadow-md"></div>
+                  <div className="bg-zinc-800 h-32 rounded-md border border-zinc-700 shadow-md"></div>
+                </div>
+              </div>
+              <div className="flex-1 text-left">
+                <h3 className="text-3xl font-bold mb-4">
+                  Build a Resume That Gets You Hired
+                </h3>
+                <p className="text-gray-400 mb-6 text-lg">
+                  Our ATS-optimized resume templates are designed for tech roles
+                  and have helped hundreds of CS graduates secure interviews at
+                  top companies.
+                </p>
+                <Button className="bg-green-500 hover:bg-green-600 px-6 py-2 text-md transition-colors">
+                  Create Resume
+                </Button>
+              </div>
+            </section>
+
+            {/* Apply Section */}
+            <section className="mb-32">
+              <h3 className="text-3xl font-bold mb-4 text-center">
+                Streamlined Apply Process
+              </h3>
+              <p className="text-gray-400 mb-6 text-lg max-w-2xl mx-auto text-center">
+                Apply to entry-level positions with a single click and get
+                prioritized access to roles at companies looking for fresh CS
+                talent.
+              </p>
+              <div className="bg-zinc-800 h-48 w-full rounded-lg border border-zinc-700 shadow-lg"></div>
+            </section>
+
+            {/* Pricing Section */}
+            <section className="mb-16">
+              <h2 className="text-3xl font-bold text-center mb-16">
+                Start Landing Jobs With Us!
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <Card className="bg-zinc-800 border-zinc-700 overflow-hidden transform transition-transform hover:scale-105">
+                  <CardHeader className="pb-2">
+                    <h3 className="text-xl font-bold">Basic</h3>
+                  </CardHeader>
+                  <CardContent className="pb-6">
+                    <p className="text-4xl font-bold mb-1">$1</p>
+                    <p className="text-sm text-gray-400 mb-6">per month</p>
+                    <ul className="text-gray-300 space-y-3 mb-6">
+                      {[
+                        "Resume templates",
+                        "Job listings",
+                        "Community access",
+                      ].map((feature, idx) => (
+                        <li key={idx} className="flex items-center">
+                          <svg
+                            className="w-5 h-5 mr-2 text-green-500"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M5 13l4 4L19 7"
+                            ></path>
+                          </svg>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                  <CardFooter>
+                    <Button className="w-full bg-green-500 hover:bg-green-600 rounded-md py-2 transition-colors">
+                      Get Started
+                    </Button>
+                  </CardFooter>
+                </Card>
+
+                <Card className="bg-zinc-800 border-zinc-700 overflow-hidden relative transform transition-transform hover:scale-105">
+                  <Badge className="absolute top-4 right-4 bg-blue-600">
+                    Popular
+                  </Badge>
+                  <CardHeader className="pb-2">
+                    <h3 className="text-xl font-bold">Standard</h3>
+                  </CardHeader>
+                  <CardContent className="pb-6">
+                    <p className="text-4xl font-bold mb-1">$10</p>
+                    <p className="text-sm text-gray-400 mb-6">per month</p>
+                    <ul className="text-gray-300 space-y-3 mb-6">
+                      {[
+                        "All Basic features",
+                        "Resume reviews",
+                        "Access to courses",
+                        "Monthly mentor call",
+                      ].map((feature, idx) => (
+                        <li key={idx} className="flex items-center">
+                          <svg
+                            className="w-5 h-5 mr-2 text-green-500"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M5 13l4 4L19 7"
+                            ></path>
+                          </svg>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                  <CardFooter>
+                    <Button className="w-full bg-green-500 hover:bg-green-600 rounded-md py-2 transition-colors">
+                      Get Started
+                    </Button>
+                  </CardFooter>
+                </Card>
+
+                <Card className="bg-zinc-800 border-zinc-700 overflow-hidden transform transition-transform hover:scale-105">
+                  <CardHeader className="pb-2">
+                    <h3 className="text-xl font-bold">Professional</h3>
+                  </CardHeader>
+                  <CardContent className="pb-6">
+                    <p className="text-4xl font-bold mb-1">$50</p>
+                    <p className="text-sm text-gray-400 mb-6">per month</p>
+                    <ul className="text-gray-300 space-y-3 mb-6">
+                      {[
+                        "All Standard features",
+                        "Weekly mentor calls",
+                        "Mock interviews",
+                        "Prioritized job referrals",
+                        "1-on-1 career coaching",
+                      ].map((feature, idx) => (
+                        <li key={idx} className="flex items-center">
+                          <svg
+                            className="w-5 h-5 mr-2 text-green-500"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M5 13l4 4L19 7"
+                            ></path>
+                          </svg>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                  <CardFooter>
+                    <Button className="w-full bg-green-500 hover:bg-green-600 rounded-md py-2 transition-colors">
+                      Get Started
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+            </section>
           </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-zinc-950 py-8 border-t border-zinc-800">
+        <div className="container mx-auto px-4 text-center text-sm text-gray-500">
+          <p>© {new Date().getFullYear()} UnemployedCS. All rights reserved.</p>
         </div>
-      </div>
+      </footer>
     </div>
   );
 }
