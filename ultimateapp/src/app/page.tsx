@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -7,22 +9,15 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import HeroSection from "./landingpage-components/heroSection";
 
 export default function Home() {
   return (
     <div className="bg-black text-white min-h-screen">
       {/* Header/Navigation */}
-      <header className="container mx-auto px-4 py-6 flex justify-between items-center border-b border-zinc-800">
+      <header className="container mx-auto px-4 py-6 flex justify-between items-center ">
         <div className="flex items-center gap-2">
           <div className="h-10 w-10 rounded-full bg-blue-600 flex items-center justify-center">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M12 4v16m-8-8h16"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-            </svg>
           </div>
           <span className="text-sm font-semibold tracking-wide">
             UnemployedCS
@@ -65,42 +60,29 @@ export default function Home() {
         </nav>
         <div className="flex items-center gap-4">
           <Link
-            href="/login"
+            href="/auth/login"
             className="text-sm text-gray-300 hover:text-white transition-colors"
           >
             Log in
           </Link>
-          <Button
-            size="sm"
-            className="bg-white text-black hover:bg-gray-200 rounded-full px-4"
-          >
-            Sign up
-          </Button>
+          <Link href="/auth/signup">
+            <Button
+              size="sm"
+              className="bg-white text-black hover:bg-gray-200 rounded-full px-4"
+            >
+              Sign up
+            </Button>
+          </Link>
         </div>
       </header>
 
       <main>
         {/* Main Hero Section */}
-        <section className="container mx-auto px-4 py-20 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            WELCOME TO
-            <br />
-            <span className="text-5xl md:text-6xl font-extrabold tracking-tight">
-              UnemployedCS
-              <br />
-              Students
-            </span>
-          </h1>
-          <p className="text-gray-400 mb-10 max-w-md mx-auto text-lg">
-            Land the tech job you deserve.
-          </p>
-          <Button className="bg-blue-600 hover:bg-blue-700 px-8 py-6 text-lg font-medium rounded-md transition-transform hover:scale-105">
-            Get Started
-          </Button>
-        </section>
+        <HeroSection />
+        
 
         {/* Features Section */}
-        <section className="bg-zinc-900 py-20">
+        <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-2xl font-bold mb-3 tracking-wide">
@@ -215,10 +197,10 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 <Card className="bg-zinc-800 border-zinc-700 overflow-hidden transform transition-transform hover:scale-105">
                   <CardHeader className="pb-2">
-                    <h3 className="text-xl font-bold">Basic</h3>
+                    <h3 className="text-xl text-white font-bold">Basic</h3>
                   </CardHeader>
                   <CardContent className="pb-6">
-                    <p className="text-4xl font-bold mb-1">$1</p>
+                    <p className="text-4xl text-white font-bold mb-1">$1</p>
                     <p className="text-sm text-gray-400 mb-6">per month</p>
                     <ul className="text-gray-300 space-y-3 mb-6">
                       {[
@@ -257,10 +239,10 @@ export default function Home() {
                     Popular
                   </Badge>
                   <CardHeader className="pb-2">
-                    <h3 className="text-xl font-bold">Standard</h3>
+                    <h3 className="text-xl text-white font-bold">Standard</h3>
                   </CardHeader>
                   <CardContent className="pb-6">
-                    <p className="text-4xl font-bold mb-1">$10</p>
+                    <p className="text-4xl text-white font-bold mb-1">$10</p>
                     <p className="text-sm text-gray-400 mb-6">per month</p>
                     <ul className="text-gray-300 space-y-3 mb-6">
                       {[
@@ -297,12 +279,12 @@ export default function Home() {
 
                 <Card className="bg-zinc-800 border-zinc-700 overflow-hidden transform transition-transform hover:scale-105">
                   <CardHeader className="pb-2">
-                    <h3 className="text-xl font-bold">Professional</h3>
+                    <h3 className="text-xl text-white font-bold">Professional</h3>
                   </CardHeader>
                   <CardContent className="pb-6">
-                    <p className="text-4xl font-bold mb-1">$50</p>
+                    <p className="text-4xl text-white font-bold mb-1">$50</p>
                     <p className="text-sm text-gray-400 mb-6">per month</p>
-                    <ul className="text-gray-300 space-y-3 mb-6">
+                    <ul className="text-gray-300  space-y-3 mb-6">
                       {[
                         "All Standard features",
                         "Weekly mentor calls",
